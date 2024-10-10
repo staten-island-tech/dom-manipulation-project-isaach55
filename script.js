@@ -1,5 +1,5 @@
 const DOMSelectors = {
-    button: document.getElementById(""),
-    box: document.getElementById(""),
-    input: document.querySelector(`#`)
-}
+  button: document.getElementById("btn"),
+  box: document.getElementById(""),
+  input: document.querySelector(`#`),
+};
