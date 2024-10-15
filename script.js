@@ -13,3 +13,6 @@ function Text(text) {
 DOMSelectors.button.addEventListener("click", function () {
   Text(DOMSelectors.text);
 });
+//default
+//make 4 seperate functions for this
+//make only 1 form
