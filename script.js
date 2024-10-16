@@ -1,18 +1,47 @@
+//holds dom selector
 const DOMSelectors = {
-  button: document.getElementById("btn"),
-  box: document.getElementById(""),
-  input: document.querySelector(`#`),
-  text: document.querySelector("#text"),
+  form: document.getElementById("form"),
+  formInput: document.getElementById("input"),
+  submitButton: document.getElementById("submit"),
+  list: document.getElementById("list")
 };
 
-function Text(text) {
-  text.textContent = "text";
-  text.style.fontSize = "40px";
+//create function
+function createDiv() {
+    const div = {
+        name: DOMSelectors.formInput.value
+    };
+
+    //call inject function, clear function
+    inject(div);
+    clearInputs();
 }
 
-DOMSelectors.button.addEventListener("click", function () {
-  Text(DOMSelectors.text);
+function inject(div) {
+    const item = document.createElement("div");
+    item.className = "item"
+    item.innerHTML = `
+        <p>${div.name}</p>
+        <button class="removeButton">Remove</button>
+    `;
+    DOMSelectors.list.appendChild(item)
+    item.querySelector(".removeButton").addEventListener("click", () => {
+        removeDiv(item);
+    }
+    );
+}
+
+function clearInputs() {
+    DOMSelectors.formInput.value = "";
+}
+
+function removeDiv(item) {
+    DOMSelectors.list.removeChild(item);
+}
+
+//listens for submit button click
+DOMSelectors.submitButton.addEventListener("click", (event) => {
+    event.preventDefault(); // Prevents the form from submitting
+    createDiv();
 });
-//default
-//make 4 seperate functions for this
-//make only 1 form
+
