@@ -2,6 +2,7 @@
 const DOMSelectors = {
   form: document.getElementById("form"),
   formInput: document.getElementById("input"),
+  formDescription: document.getElementById("description"),
   submitButton: document.getElementById("submit"),
   list: document.getElementById("list")
 };
@@ -9,7 +10,8 @@ const DOMSelectors = {
 //create function
 function createDiv() {
     const div = {
-        name: DOMSelectors.formInput.value
+        name: DOMSelectors.formInput.value,
+        description: DOMSelectors.formDescription.value
     };
 
     //call inject function, clear function
@@ -21,11 +23,12 @@ function inject(div) {
     const item = document.createElement("div");
     item.className = "item"
     item.innerHTML = `
-        <p>${div.name}</p>
+        <p class="box">${div.name}</p>
+        <p class="box">${div.description}</p>
         <button class="removeButton">Remove</button>
     `;
     DOMSelectors.list.appendChild(item)
-    item.style.backgroundColor = "red"
+    item.style.backgroundColor = "#94BFA7"
     item.querySelector(".removeButton").addEventListener("click", () => {
         removeDiv(item);
     }
@@ -34,6 +37,7 @@ function inject(div) {
 
 function clearInputs() {
     DOMSelectors.formInput.value = "";
+    DOMSelectors.formDescription.value = "";
 }
 
 function removeDiv(item) {
@@ -45,4 +49,5 @@ DOMSelectors.submitButton.addEventListener("click", (event) => {
     event.preventDefault(); // Prevents the form from submitting
     createDiv();
 });
+
 
