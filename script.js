@@ -25,6 +25,7 @@ function inject(div) {
         <button class="removeButton">Remove</button>
     `;
     DOMSelectors.list.appendChild(item)
+    item.style.backgroundColor = "red"
     item.querySelector(".removeButton").addEventListener("click", () => {
         removeDiv(item);
     }
