@@ -1,17 +1,17 @@
 body {
     background-color: #353831;
-}
-
-.box {
-    color: ;
+    color: aliceblue;
 }
 
 .item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    width: 22%;
-    height: 30vh;
+    width: 45%;
+    max-width: 100%;
     color: #301A4B;
-    background-color: #6DB1BF;
+    background-color: #94BFA7;
     padding: 2vw;
     border-style: solid;
     border-width: 0.5vw;
@@ -20,16 +20,20 @@ body {
     box-sizing: border-box;
     margin-bottom: 2vmin;
     font-size: 2.5vmin;
-    overflow: hidden;
 }
 
-.removeButton {
-    align-items: end;
+.item img {
+    max-height: 40vh;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 2vh;
 }
 
-
-@media screen and (max-width: 900px) {
-    .card {
-        font-size: 2vmin;
-    }
+.divName{
+    font-size: 2em;
+    margin: 2vh;
+}
+.divDescription{
+    font-size: 1em;
+    margin-top: 0;
 }
